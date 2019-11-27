@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Devstratum JQP Graph</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery.dvstr_jqp_graph.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery.dvstr_jqp_graph.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Devstratum JQP Graph</h1>
+    <p>jQuery plugin for render simple html block graphs</p>
+	<ul>
+		<li>Version: 0.9</li>
+		<li>License: GNU General Public License v3.0</li>
+		<li>Author: Sergey Osipov</li>
+		<li>Website: <a href="https://devstratum.ru">https://devstratum.ru</a></li>
+		<li>Email: <a href="mailto:info@devstartum.ru">info@devstartum.ru</a></li>
+		<li>Repo: <a href="https://github.com/devstratum/Devstratum-JQP-Graph">https://github.com/devstratum/Devstratum-JQP-Graph</a></li>
+	</ul>	
+</div>
+
+<div class="graph">
+    <div class="graph__wrapper">
+        <div class="container">
+            <div class="graph__header">Clear</div>
+            <div class="graph__block" id="graph_01"></div>
+            <script>
+                jQuery(document).ready(function($) {
+                    $('#graph_01').dvstr_graph({
+                        title: 'Clear demo',
+                        description: 'This is description',
+                        unit: 'Unit',
+                        better: 'What better?'
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+
+<div class="graph">
+    <div class="graph__wrapper">
+        <div class="container">
+            <div class="graph__header">V-Ray Benchmark</div>
+            <div class="graph__block" id="graph_02"></div>
+            <script>
+                jQuery(document).ready(function($) {
+                    $('#graph_02').dvstr_graph({
+                        title: 'V-Ray Benchmark 1.0.1',
+                        unit: 'Seconds',
+                        better: 'Lower is better',
+                        graphs: [
+                            {
+                                label: 'Phenom II X6 1055T',
+                                value: [
+                                    336
+                                ]
+                            },
+                            {
+                                label: 'Xeon E5450',
+                                value: [
+                                    470
+                                ]
+                            },
+                            {
+                                label: 'Core i5-3470',
+                                value: [
+                                    337
+                                ]
+                            }
+                        ]
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+
+<div class="graph">
+    <div class="graph__wrapper">
+        <div class="container">
+            <div class="graph__header">Cinebench R15</div>
+            <div class="graph__block" id="graph_03"></div>
+            <script>
+                jQuery(document).ready(function($) {
+                    var color_blue = '#4c8ffc';
+                    var color_green = '#4f9100';
+
+                    $('#graph_03').dvstr_graph({
+                        title: 'Cinebench R15.038',
+                        unit: 'Score',
+                        better: 'Higher is better',
+                        separate: true,
+                        point: [
+                            {
+                                title: 'Single Core',
+                                color: color_blue
+                            },
+                            {
+                                title: 'Multi-Thread',
+                                color: color_green
+                            }
+                        ],
+                        graphs: [
+                            {
+                                label: 'Phenom II X6 1055T',
+                                color: [
+                                    color_blue,
+                                    color_green
+                                ],
+                                value: [
+                                    84,
+                                    427
+                                ]
+                            },
+                            {
+                                label: 'Xeon E5450',
+                                color: [
+                                    color_blue,
+                                    color_green
+                                ],
+                                value: [
+                                    86,
+                                    328
+                                ]
+                            },
+                            {
+                                label: 'Core i5-3470',
+                                color: [
+                                    color_blue,
+                                    color_green
+                                ],
+                                value: [
+                                    132,
+                                    481
+                                ]
+                            }
+                        ]
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+
+<div class="graph">
+    <div class="graph__wrapper">
+        <div class="container">
+            <div class="graph__header">3DMark</div>
+            <div class="graph__block" id="graph_04"></div>
+            <script>
+                jQuery(document).ready(function($) {
+                    var color_blue = '#4c8ffc';
+                    var color_green = '#4f9100';
+                    var color_orange = '#e76100';
+
+                    $('#graph_04').dvstr_graph({
+                        title: '3DMark 2.7.6',
+                        description: 'Fire Strike 1920 x 1080 (Radeon RX 470 4GB)',
+                        unit: 'Score',
+                        better: 'Higher is better',
+                        grid_wmax: 10000,
+                        grid_part: 10,
+                        point: [
+                            {
+                                title: 'Combined',
+                                color: color_blue
+                            },
+                            {
+                                title: 'CPU',
+                                color: color_green
+                            },
+                            {
+                                title: 'Overall',
+                                color: color_orange
+                            }
+                        ],
+                        graphs: [
+                            {
+                                label: 'Phenom II X6 1055T',
+                                color: [
+                                    color_blue,
+                                    color_green,
+                                    color_orange
+                                ],
+                                value: [
+                                    3069,
+                                    5999,
+                                    8252,
+                                ]
+                            },
+                            {
+                                label: 'Xeon E5450',
+                                color: [
+                                    color_blue,
+                                    color_green,
+                                    color_orange
+                                ],
+                                value: [
+                                    2863,
+                                    5120,
+                                    7927,
+                                ]
+                            },
+                            {
+                                label: 'Core i5-3470',
+                                color: [
+                                    color_blue,
+                                    color_green,
+                                    color_orange
+                                ],
+                                value: [
+                                    4047,
+                                    6489,
+                                    9143,
+                                ]
+                            }
+                        ]
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+
+<div class="graph">
+    <div class="graph__wrapper">
+        <div class="container">
+            <div class="graph__header">Unigine Superposition</div>
+            <div class="graph__block" id="graph_05"></div>
+            <script>
+                jQuery(document).ready(function($) {
+                    var color_blue = '#4c8ffc';
+                    var color_green = '#4f9100';
+                    var color_red = '#cc0000';
+
+                    $('#graph_05').dvstr_graph({
+                        title: 'Unigine Superposition 1.0',
+                        description: 'High 1920 x 1080 (Radeon RX 470 4GB)',
+                        unit: 'FPS',
+                        better: 'Higher is better',
+                        grid_wmax: 50,
+                        point: [
+                            {
+                                title: 'Min',
+                                color: color_blue
+                            },
+                            {
+                                title: 'Avg',
+                                color: color_green
+                            },
+                            {
+                                title: 'Max',
+                                color: color_red
+                            }
+                        ],
+                        graphs: [
+                            {
+                                label: 'Phenom II X6 1055T',
+                                color: [
+                                    color_blue,
+                                    color_green,
+                                    color_red
+                                ],
+                                value: [
+                                    28.86,
+                                    35.15,
+                                    41.05,
+                                ]
+                            },
+                            {
+                                label: 'Xeon E5450',
+                                color: [
+                                    color_blue,
+                                    color_green,
+                                    color_red
+                                ],
+                                value: [
+                                    29.37,
+                                    35.97,
+                                    41.98,
+                                ]
+                            },
+                            {
+                                label: 'Core i5-3470',
+                                color: [
+                                    color_blue,
+                                    color_green,
+                                    color_red
+                                ],
+                                value: [
+                                    30.99,
+                                    36.21,
+                                    42.01,
+                                ]
+                            }
+                        ]
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

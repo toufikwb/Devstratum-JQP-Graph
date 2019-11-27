@@ -1,1 +1,1 @@
-# Devstratum-JQP-Graph
+# Devstratum JQP Graph
