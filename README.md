@@ -107,6 +107,12 @@ Include local script files in html doc
 * Default: none
 * Graph name
 
+**description**
+
+* Type: string
+* Default: none
+* Graph description
+
 **unit**
 
 * Type: string
@@ -151,8 +157,13 @@ Include local script files in html doc
 ## Info
 
 Version: 0.9
+
 License: GNU General Public License v3.0
+
 Author: Sergey Osipov
+
 Website: https://devstratum.ru
+
 Email: info@devstartum.ru
+
 Repo: https://github.com/devstratum/Devstratum-JQP-Graph
