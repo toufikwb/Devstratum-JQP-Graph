@@ -129,7 +129,7 @@ Include local script files in html doc
 
 * Type: boolean
 * Default: false
-* Separating the output of graph columns
+* Separating the output of graph rows
 
 **grid_wmax**
 * Type: int
@@ -152,7 +152,7 @@ Include local script files in html doc
 
 * Type: object
 * Default: none
-* Graph Column Object with Label, Colors and Value Parameters
+* Graph Row Object with Label, Colors and Value Parameters
 
 ## Info
 
