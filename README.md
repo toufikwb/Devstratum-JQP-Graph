@@ -99,6 +99,68 @@ Include local script files in html doc
     });
 </script>
 ```
+```html
+<div class="graph__block" id="graph_02"></div>
+<script>
+    jQuery(document).ready(function($) {
+        var color_blue = '#4c8ffc';
+        var color_red = '#cc0000';
+
+        $('#graph_02').dvstr_graph({
+            title: 'Blender 2.79b',
+            unit: 'Seconds',
+            better: 'Lower is better',
+            type: 'time',
+            points: [
+                {
+                    title: 'Samples 150',
+                    color: color_blue
+                },
+                {
+                    title: 'Samples 600',
+                    color: color_red
+                }
+            ],
+            graphs: [
+                {
+                    label: 'Phenom II X6 1055T',
+                    color: [
+                        color_blue,
+                        color_red
+                    ],
+                    value: [
+                        '02:19',
+                        '09:09'
+                    ]
+                },
+                {
+                    label: 'Xeon E5450',
+                    color: [
+                        color_blue,
+                        color_red
+                    ],
+                    value: [
+                        '03:07',
+                        '12:22'
+                    ]
+                },
+                {
+                    label: 'Core i5-3470',
+                    color: [
+                        color_blue,
+                        color_red
+                    ],
+                    value: [
+                        '01:28',
+                        '05:48'
+                    ]
+                }
+            ]
+        });
+    });
+</script>
+```
+
 ## Options
 
 **title**
