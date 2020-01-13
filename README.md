@@ -99,6 +99,8 @@ Include local script files in html doc
     });
 </script>
 ```
+![screenshot of sample](http://devstratum.ru/images/articles/2019/11/devstratum-jqp-graph-vizualizatsiya-grafikov/devstratum-jqp-graph-vizualizatsiya-grafikov_example-time.jpg)
+
 ```html
 <div class="graph__block" id="graph_02"></div>
 <script>
