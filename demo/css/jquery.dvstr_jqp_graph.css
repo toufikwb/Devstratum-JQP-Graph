@@ -2,7 +2,7 @@
 Devstratum JQP Graph
 jQuery plugin for render simple html block graphs
 
-Version: 0.9
+Version: 1.0
 License: GNU General Public License v3.0
 Author: Sergey Osipov
 Website: https://devstratum.ru
@@ -230,11 +230,22 @@ Repo: https://github.com/devstratum/Devstratum-JQP-Graph
     background: #555;
 }
 
+.dvstr-graph__line i {
+    display: block;
+    position: relative;
+    padding: 0;
+    line-height: 1;
+    font-size: 90%;
+    font-style: normal;
+    white-space: nowrap;
+    color: #eee;
+}
+
 .dvstr-graph__line span {
     display: block;
     position: relative;
     padding: 0 6px;
-    line-height: 0;
+    line-height: 1;
     font-size: 90%;
     white-space: nowrap;
     color: #fff;

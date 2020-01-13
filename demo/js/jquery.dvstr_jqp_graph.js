@@ -2,7 +2,7 @@
 Devstratum JQP Graph
 jQuery plugin for render simple html block graphs
 
-Version: 0.9
+Version: 1.0
 License: GNU General Public License v3.0
 Author: Sergey Osipov
 Website: https://devstratum.ru
@@ -47,6 +47,28 @@ Repo: https://github.com/devstratum/Devstratum-JQP-Graph
         return percent.toFixed(4);
     }
 
+    // calcValueSeconds
+    function calcValueSeconds(val) {
+        var seconds = 0;
+        var time_array = val.split(':');
+        time_array.reverse();
+
+        // hours
+        if (time_array[2]) {
+            seconds = seconds + (Number(time_array[2]) * 3600);
+        }
+        // minutes
+        if (time_array[1]) {
+            seconds = seconds + (Number(time_array[1]) * 60);
+        }
+        // seconds
+        if (time_array[0]) {
+            seconds = seconds + Number(time_array[0]);
+        }
+
+        return seconds;
+    }
+
     // calcGridMax
     function calcGridMax(options) {
         var output = 0;
@@ -57,7 +79,12 @@ Repo: https://github.com/devstratum/Devstratum-JQP-Graph
             var bufer_max = 0;
             if (typeof options.graphs === 'object') {
                 options.graphs.forEach(function(item) {
-                    item.value.forEach(function (val) {
+                    item.value.forEach(function(val) {
+                        // check type
+                        if (options.type === 'time') {
+                            val = calcValueSeconds(val);
+                        }
+
                         if (val > bufer_max) {
                             bufer_max = val;
                         }
@@ -187,6 +214,12 @@ Repo: https://github.com/devstratum/Devstratum-JQP-Graph
                     var index = 999;
 
                     item.value.forEach(function (val, i) {
+                        // check type
+                        if (options.type === 'time') {
+                            var val_time = val;
+                            val = calcValueSeconds(val);
+                        }
+
                         if (typeof val === 'number') {
                             var line_index = 'z-index: ' + (index--) + ';';
 
@@ -203,6 +236,10 @@ Repo: https://github.com/devstratum/Devstratum-JQP-Graph
                             }
 
                             output += '<div class="dvstr-graph__line" style="' + line_width + line_color + line_separate + line_index +'">';
+                            // check type
+                            if (options.type === 'time') {
+                                output += '<i class="time">' + val_time + '</i>';
+                            }
                             output += '<span>' + val + '</span>';
                             output += '</div>';
                         }

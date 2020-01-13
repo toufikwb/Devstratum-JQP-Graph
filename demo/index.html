@@ -15,7 +15,7 @@
     <h1>Devstratum JQP Graph</h1>
     <p>jQuery plugin for render simple html block graphs</p>
 	<ul>
-		<li>Version: 0.9</li>
+		<li>Version: 1.0</li>
 		<li>License: GNU General Public License v3.0</li>
 		<li>Author: Sergey Osipov</li>
 		<li>Website: <a href="https://devstratum.ru">https://devstratum.ru</a></li>
@@ -151,15 +151,82 @@
 <div class="graph">
     <div class="graph__wrapper">
         <div class="container">
-            <div class="graph__header">3DMark</div>
+            <div class="graph__header">Blender</div>
             <div class="graph__block" id="graph_04"></div>
+            <script>
+                jQuery(document).ready(function($) {
+                    var color_blue = '#4c8ffc';
+                    var color_red = '#cc0000';
+
+                    $('#graph_04').dvstr_graph({
+                        title: 'Blender 2.79b',
+                        unit: 'Seconds',
+                        better: 'Lower is better',
+                        type: 'time',
+                        points: [
+                            {
+                                title: 'Samples 150',
+                                color: color_blue
+                            },
+                            {
+                                title: 'Samples 600',
+                                color: color_red
+                            }
+                        ],
+                        graphs: [
+                            {
+                                label: 'Phenom II X6 1055T',
+                                color: [
+                                    color_blue,
+                                    color_red
+                                ],
+                                value: [
+                                    '02:19',
+                                    '09:09'
+                                ]
+                            },
+                            {
+                                label: 'Xeon E5450',
+                                color: [
+                                    color_blue,
+                                    color_red
+                                ],
+                                value: [
+                                    '03:07',
+                                    '12:22'
+                                ]
+                            },
+                            {
+                                label: 'Core i5-3470',
+                                color: [
+                                    color_blue,
+                                    color_red
+                                ],
+                                value: [
+                                    '01:28',
+                                    '05:48'
+                                ]
+                            }
+                        ]
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+
+<div class="graph">
+    <div class="graph__wrapper">
+        <div class="container">
+            <div class="graph__header">3DMark</div>
+            <div class="graph__block" id="graph_05"></div>
             <script>
                 jQuery(document).ready(function($) {
                     var color_blue = '#4c8ffc';
                     var color_green = '#4f9100';
                     var color_orange = '#e76100';
 
-                    $('#graph_04').dvstr_graph({
+                    $('#graph_05').dvstr_graph({
                         title: '3DMark 2.7.6',
                         description: 'Fire Strike 1920 x 1080 (Radeon RX 470 4GB)',
                         unit: 'Score',
@@ -232,14 +299,14 @@
     <div class="graph__wrapper">
         <div class="container">
             <div class="graph__header">Unigine Superposition</div>
-            <div class="graph__block" id="graph_05"></div>
+            <div class="graph__block" id="graph_06"></div>
             <script>
                 jQuery(document).ready(function($) {
                     var color_blue = '#4c8ffc';
                     var color_green = '#4f9100';
                     var color_red = '#cc0000';
 
-                    $('#graph_05').dvstr_graph({
+                    $('#graph_06').dvstr_graph({
                         title: 'Unigine Superposition 1.0',
                         description: 'High 1920 x 1080 (Radeon RX 470 4GB)',
                         unit: 'FPS',

@@ -125,6 +125,11 @@ Include local script files in html doc
 * Default: none
 * Which values are better, higher or lower
 
+**type**
+* Type: string
+* Default: number
+* Data type, number or time
+
 **separate**
 
 * Type: boolean
@@ -156,7 +161,7 @@ Include local script files in html doc
 
 ## Info
 
-Version: 0.9
+Version: 1.0
 
 License: GNU General Public License v3.0
 
